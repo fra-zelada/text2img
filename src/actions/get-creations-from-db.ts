@@ -20,9 +20,14 @@ export const getCreationById = cache(async (id: string) => {
             throw new ActionError("Invalid Creation id");
         }
 
+        const KV_REST_API_URL = process.env.KV_REST_API_URL ?? "";
+        const KV_REST_API_TOKEN = process.env.KV_REST_API_TOKEN ?? "";
+        if (KV_REST_API_URL == "" || KV_REST_API_TOKEN == "")
+            throw new ActionError("Missing redis Config");
+
         const kv = createClient({
-            url: "http://localhost:8079",
-            token: "example_token",
+            url: KV_REST_API_URL,
+            token: KV_REST_API_TOKEN,
         });
 
         const datosImagen = await kv.hgetall<CreationResp>(`image:${id}`);

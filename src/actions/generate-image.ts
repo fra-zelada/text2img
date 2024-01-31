@@ -183,12 +183,13 @@ const uploadToCloudinary = async (file_url: string) => {
 };
 
 const saveToDB = async (urlImage: string, prompt: string) => {
-    const KV_URL = process.env.KV_URL ?? "";
-    const KV_REST_API_TOKEN = process.env.KV_REST_API_TOKEN ?? "";
-
     try {
+        const KV_REST_API_URL = process.env.KV_REST_API_URL ?? "";
+        const KV_REST_API_TOKEN = process.env.KV_REST_API_TOKEN ?? "";
+        if (KV_REST_API_URL == "" || KV_REST_API_TOKEN == "")
+            throw new ActionError("Missing redis Config");
         const kv = createClient({
-            url: KV_URL,
+            url: KV_REST_API_URL,
             token: KV_REST_API_TOKEN,
         });
 
@@ -201,6 +202,9 @@ const saveToDB = async (urlImage: string, prompt: string) => {
                 else throw new Error("Redis issue");
             });
     } catch (error) {
+        if (error instanceof ActionError) {
+            console.error(error.message);
+        }
         console.error(error);
     }
 };
