@@ -188,7 +188,9 @@ export const getCreationUrl = (id: string) => {
 
         const PATH = `${DOMAIN_URL}/creation`;
 
-        return `${PATH}/${id}`;
+        return new Promise<string>((resolve) => {
+            resolve(`${PATH}/${id}`);
+        });
     } catch (error) {
         if (error instanceof ActionError) {
             console.error(error.message);

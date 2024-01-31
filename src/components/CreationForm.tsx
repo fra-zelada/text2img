@@ -78,14 +78,17 @@ export const CreationForm = () => {
             if (!creationId) {
                 throw new CreationFormError("Missing path config.");
             }
-            const url = getCreationUrl(creationId!);
+            const url = await getCreationUrl(creationId);
+            if (!url) {
+                throw new CreationFormError("Missing path config.");
+            }
             return new Promise<generateImageResponse>((resolve) => {
                 resolve({
                     generated: true,
                     urlImage: uploadedImage,
                     prompt,
-                    id: creationId!,
-                    url: url!,
+                    id: creationId,
+                    url: url,
                 });
             });
         } catch (error) {
