@@ -1,7 +1,6 @@
 import { ChangeEvent, Fragment, useEffect, useState } from "react";
 import { useFormStatus } from "react-dom";
 import { getRandomPrompt } from "@/actions";
-import { Tooltip } from "./ui/tooltip";
 
 export const CreationFormInputs = () => {
     const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
