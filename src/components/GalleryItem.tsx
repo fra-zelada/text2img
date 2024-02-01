@@ -20,12 +20,12 @@ export const GalleryItem = ({ item }: item) => {
         hover:-translate-y-1 transition-transform hover:shadow-xl hover:shadow-slate-950 hover:cursor-pointer animate-fade-down "
             onClick={() => setOpen(true)}
         >
-            <div className="bg-slate-400 h-28 w-28 shadow-lg shadow-slate-600 rounded-xl aspect-square">
+            <div className="bg-slate-400 h-28 md:h-44 w-28 md:w-44 shadow-lg shadow-slate-600 rounded-xl aspect-square">
                 <picture>
                     <img
                         src={item.urlImage}
                         alt=""
-                        className="h-28 rounded-xl "
+                        className="h-28 md:h-44 rounded-xl "
                     />
                 </picture>
             </div>

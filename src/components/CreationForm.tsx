@@ -92,6 +92,10 @@ export const CreationForm = () => {
                 });
             });
         } catch (error) {
+            if (error instanceof CreationFormError) {
+                console.error(error.message);
+            }
+            console.log(error);
             return new Promise<generateImageResponse>((resolve) => {
                 resolve({
                     generated: false,

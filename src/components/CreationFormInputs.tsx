@@ -32,16 +32,16 @@ export const CreationFormInputs = () => {
             <input
                 type="text"
                 name="prompt"
-                className="text-black text-xl font-semibold p-2 px-4 w-full rounded-full mt-2 active:bg-white relative z-50"
+                className="text-black text-xl font-semibold p-2 px-4 w-full rounded-full mt-2 active:bg-white relative z-50 mx-auto"
                 readOnly={pending}
                 value={promptInputValue}
                 id=""
                 onChange={handleInputChange}
                 onReset={() => setPromptInputValue("")}
             />
-            <div className="flex flex-row justify-between gap-5 my-1 mt-3 mb-3">
+            <div className="flex flex-row justify-between gap-5 my-1 mt-2 md:mt-3 md:mb-3 mx-2 md:mx-0">
                 <button
-                    className={` bg-gradient-to-b from-yellow-500 to-yellow-700 text-black font-semibold w-full text-2xl  px-2  py-3 rounded-full ${
+                    className={` bg-gradient-to-b from-yellow-500 to-yellow-700 text-black font-semibold w-full text-lg md:text-2xl  px-2  py-1 md:py-3 rounded-full ${
                         !pending && "hover:from-yellow-500 hover:to-yellow-300"
                     }  transition-colors disabled:cursor-not-allowed`}
                     type="button"
@@ -52,7 +52,7 @@ export const CreationFormInputs = () => {
                 </button>
 
                 <button
-                    className={`  bg-gradient-to-b from-blue-700 to-blue-900 text-white font-semibold w-full text-2xl px-2 py-3 rounded-full ${
+                    className={`  bg-gradient-to-b from-blue-700 to-blue-900 text-white font-semibold w-full text-lg md:text-2xl px-2 py-1 md:py-3 rounded-full ${
                         !pending && "hover:from-blue-500 hover:to-blue-700"
                     }  transition-colors disabled:cursor-not-allowed `}
                     type="submit"
