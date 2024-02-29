@@ -25,6 +25,7 @@ const GeneratedImageCard = ({
             className="mx-auto flex flex-col mt-0  bg-white p-5
             w-full
          animate-fade-down transition-transform "
+            data-test="new-creation-wait"
         >
             <div className=" rounded overflow-hidden shadow-lg animate-pulse ">
                 <div className=" aspect-square bg-gray-300 shadow-slate-600 shadow-lg"></div>
@@ -41,6 +42,7 @@ const GeneratedImageCard = ({
             <article
                 className="mx-auto flex flex-col mt-0  bg-white p-5
             w-full   "
+                data-test="new-creation-display"
             >
                 <div className=" aspect-square  bg-gray-300 w-full shadow-slate-600 shadow-lg ">
                     <picture>

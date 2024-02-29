@@ -134,7 +134,12 @@ export const CreationForm = () => {
 
     return (
         <Fragment>
-            <form ref={ref} action={formAction} className="w-full ">
+            <form
+                ref={ref}
+                data-test={"creation-form"}
+                action={formAction}
+                className="w-full "
+            >
                 <CreationFormInputs />
                 <div className="w-full transition-all flex flex-col px-2 md:px-0">
                     <WaitAlert />

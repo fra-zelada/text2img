@@ -1,13 +1,8 @@
 "use server";
 
-import { ActionError } from "@/utils";
+import { ActionError } from "../utils";
 import { createClient } from "@vercel/kv";
 import { v4 as uuidv4 } from "uuid";
-import { Creation } from "@/interface";
-
-interface generateImageResponse extends Creation {
-    generated: boolean;
-}
 
 export const generateImageRequestToAIService = async (
     formData: FormData
