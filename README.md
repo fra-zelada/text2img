@@ -6,7 +6,7 @@
 > <img
 > src="https://res.cloudinary.com/dwvkka6mz/image/upload/v1706815856/captura-text2img_svrq8t.png"></a></p>
 >
-> Web application for generating images with artificial intelligence. Developed using React + **Next.js 14** & **Typescript**, implementing **Server Actions** and cache handling techniques. Utilizes Vercel KV's Redis database, Zustand for state management, styled with **Tailwind CSS**, and incorporates components from **Shadcn/ui**. Image generation is done through the **[`Replicate API`](https://replicate.com/)**.
+> Web application for generating images with artificial intelligence. Developed using React + **Next.js 14** & **Typescript**, implementing **Server Actions** and cache handling techniques. Utilizes Vercel KV's Redis database, Zustand for state management, styled with **Tailwind CSS**, and incorporates components from **Shadcn/ui**. Image generation is done through the **[`Replicate API`](https://replicate.com/)**.  In addition, testing has been conducted using **Cypress**, **Jest**, and **Testing Library**.
 >
 > [Live demo](https://text2img-replicate.vercel.app/)
 
@@ -59,3 +59,15 @@ Start the application by running `npm run dev`
 The application will now be running on `http://localhost:3000`
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Run tests
+
+### E2E Testing
+
+With the application running, run this commmand `npm run cypress:run` or `npm run cypress:open`
+
+### Unit Testing
+
+`npm run test`
+
+
