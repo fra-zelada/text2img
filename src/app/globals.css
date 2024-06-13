@@ -158,3 +158,25 @@ h2 {
     position: relative; /* Asegúrate de que h2 también tenga posición relativa */
     z-index: 100;
 }
+
+.form_animation {
+    animation: slide-up 0.5s ease-in 0s;
+}
+
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        scale: 2;
+        transform: translateY(20%);
+    }
+    50% {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+        transform: translateY(0%);
+    }
+}
